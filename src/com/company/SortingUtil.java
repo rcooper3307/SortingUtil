@@ -17,7 +17,7 @@ public class SortingUtil {
         }
         return arr;
     }
-    public static boolean Check(int[]arr)
+    public static boolean isSorted(int[]arr)
     {
         for(int i = 0; i < (arr.length-1); i++)
         {
@@ -25,6 +25,24 @@ public class SortingUtil {
             {
                 return false;
             }
+        }
+        return true;
+    }
+    public static boolean checkSum(int[] before, int[] after)
+    {
+        int beforeSum = 0;
+        int afterSum = 0;
+        for(int i = 0; i < before.length; i++)
+        {
+            before[i] += beforeSum;
+        }
+        for(int i = 0; i < after.length; i++)
+        {
+            after[i] += afterSum;
+        }
+        if(beforeSum != afterSum)
+        {
+            return false;
         }
         return true;
     }
